@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 전세계 날씨 검색 </title>
     <link rel="stylesheet" href="./css/style.css">
+    <script defer src="./script/weather.js"></script>
 </head>
 
 
@@ -13,11 +14,11 @@
 
     <div id="wrap">
         <h2>날씨 검색</h2>
-        <div class="form"><input type="text" id="city" name="city" value="서울">
+        <div class="form"><input type="text" id="city" name="city" value="">
             <button id="send" onclick="sendbtnEvent()">찾기</button></div>
 
         <div class="weather">
-            <div> <span id="region"></span></div>
+            <div>지역: <span id="region"></span></div>
             <div>기온: <span id="temperature"></span></div>
             <div>풍속: <span id="wind"></span></div>
             <div>날씨: <span id="weather"></span></div>
@@ -30,74 +31,7 @@
 
 
     <script>
-        // function search() { }
-
-        const url = 'https://goweather.herokuapp.com/weather/서울';
-        let sendbtn = document.getElementById("send");
-
-        document.querySelector("input").addEventListener("focus", () => {
-            document.querySelector("input").value = "";
-            temperature.textContent = "";
-            wind.textContent = "";
-            weather.textContent = "";
-
-        });
-      
-        fetch(url)
-            .then((res) => res.json())
-            .then((data) => console.log(data))
-        fetch(url)
-            .then((res) => res.json())
-            .then((data) => temperature.textContent = data['temperature']);
-        fetch(url)
-            .then((res) => res.json())
-            .then((data) => wind.textContent = data['wind']);
-        fetch(url)
-            .then((res) => res.json())
-            .then((data) => weather.textContent = data['description']);
-
-        function sendbtnEvent() {
-            // input value값 변수설정
-            let value = document.getElementById("city").value
-            // input 입력값 변수설정
-            let newValue = document.querySelector('input');
-
-            // input의 value값에 input 입력값을 넣어줌
-            value = newValue;
-
-
-            const cities = document.getElementById('city').value;
-            const url = 'https://goweather.herokuapp.com/weather/' + cities;
-
-
-            console.log(url)
-
-
-            // api 호출
-            const temperature = document.getElementById("temperature");
-            const wind = document.getElementById("wind");
-            const weather = document.getElementById("weather");
-
-
-            fetch(url)
-                .then((res) => res.json())
-                .then((data) => console.log(data))
-            fetch(url)
-                .then((res) => res.json())
-                .then((data) => temperature.textContent = data['temperature']);
-            fetch(url)
-                .then((res) => res.json())
-                .then((data) => wind.textContent = data['wind']);
-            fetch(url)
-                .then((res) => res.json())
-                .then((data) => weather.textContent = data['description']);
-
-
-
-
-
-
-        }
+    
     </script>
 </body>
 
