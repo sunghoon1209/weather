@@ -97,7 +97,7 @@
                 else if (textContent.includes('Partly cloudy')) {
                     
                     weather.textContent = "구름조금";
-                    bgc.style.backgroundImage = "linear-gradient(to top, #fff1eb 0%, #ace0f9 100%)";
+                    bgc.style.backgroundImage = "linear-gradient(to top, #ddd 30%, #ace0f9 100%)";
                 }
              
                 else if (textContent.includes('Clear')) {
@@ -131,9 +131,22 @@
         //     ;
 
         // });
-
-
+     
+        
 
 
 
     }
+    let today = new Date();   
+
+    let year = today.getFullYear(); // 년도
+    let month = today.getMonth() + 1;  // 월
+    let date = today.getDate();  // 날짜
+    let day = today.getDay();  // 요일
+    const dayList = ['일', '월', '화', '수', '목', '금', '토'];
+    const label = dayList[day]
+
+    let hours = today.getHours(); // 시
+    
+    let time = document.getElementById("time");
+    time.textContent =  year + '년 ' + month + '월 ' + date +'일 ' + label + '요일 ' + hours + '시 '  + ' 기준 '

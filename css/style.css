@@ -38,14 +38,14 @@ body {
 
 #wrap {
 
-    width: 640px;
+    width: 700px;
     margin: 100px auto 0;
     /* border: 1px solid blue; */
     border-radius: 50px;
     text-align: center;
     font-family: 'GmarketSansMedium';
     color: #fff;
- background-color: #3F72AF;
+    background-color: #3F72AF;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -54,36 +54,48 @@ body {
 
 .cover {
     background-color: rgba(255, 255, 255, 0.3);
-    width: 80%;
+    width: 700px;
     height: 100%;
-    margin: 0 auto;
+    
+ 
     /* border-radius: 50px; */
 }
 
+
 h2 {
     padding-top: 40px;
+    width: 400px;
+    margin: 0 auto;
     font-size: 48px;
 }
-
+#time {
+    /* margin-top: 20px; */
+    width: 400px;
+    margin: 0 auto;
+}
 .form {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+    /* display: flex; */
+   
+    /* gap: 30px; */
+    width: 400px;
+    margin: 0 auto;
+    
+    
 }
 
 .form input {
     border: 1px solid #fff;
     outline: none;
-    width: 200px;
+    width: 260px;
     height: 30px;
     border-radius: 10px;
     /* margin-left: 80px; */
     padding-left: 10px;
     font-family: 'GmarketSansMedium';
-    font-size: 20px;
-    background-color: transparent;
+    font-size: 18px;
+    background-color: #fff;
     box-sizing: border-box;
-    color: #fff;
+    color: #111;
 }
 
 .form button {
@@ -95,7 +107,7 @@ h2 {
     height: 30px;
     border-radius: 10px;
     /* margin-left: 80px; */
-    
+
     font-family: 'GmarketSansMedium';
     /* padding: 4px; */
     font-size: 16px;
@@ -111,14 +123,15 @@ h2 {
 }
 
 .weather {
+    width: 400px;
     margin: 0 auto;
-    /* width: 200px; */
     text-align: left;
-    width: 220px;
     padding-bottom: 100px;
     font-size: 30px;
+    
 }
 
 .weather div {
-    margin-top: 40px;
+    margin-top: 60px;
+    height: 60px;
 }
