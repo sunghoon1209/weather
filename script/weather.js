@@ -64,10 +64,10 @@
             .then((res) => res.json())
             .then((data) => wind.textContent = data['wind']);
 
-        fetch(url)
+        // fetch(url)
+        //     .then((res) => res.json())
+        //     .then((data) => weather.textContent = data['description']);
 
-            .then((res) => res.json())
-            .then((data) => weather.textContent = data['description']);
 
         fetch(url, {
                 method: 'GET', // GET, POST, 등등
@@ -76,12 +76,8 @@
                     'Access-Control-Allow-Origin': 'https://sunghoon1209.github.io/weather/' // CORS 해결을 위한 헤더
                 }
             })
-            .then(response => {
-                // 응답 처리
-            })
-            .catch(error => {
-                // 오류 처리
-            });
+            .then((res) => res.json())
+            .then((data) => weather.textContent = data['description']);
 
 
 
