@@ -69,15 +69,43 @@
         //     .then((data) => weather.textContent = data['description']);
 
 
-        fetch(url, {
-                method: 'GET', // GET, POST, 등등
-                headers: {
-                    'Content-Type': 'application/json', // 요청의 Content-Type 설정
-                    'Access-Control-Allow-Origin': 'https://sunghoon1209.github.io/weather/' // CORS 해결을 위한 헤더
-                }
-            })
+        fetch(url)
+            // , {
+            //     method: 'GET', // GET, POST, 등등
+            //     headers: {
+            //         'Content-Type': 'application/json', // 요청의 Content-Type 설정
+            //         // 'Access-Control-Allow-Origin': 'https://sunghoon1209.github.io/weather/' // CORS 해결을 위한 헤더
+            //     }
+            // })
             .then((res) => res.json())
-            .then((data) => weather.textContent = data['description']);
+            .then(data => {
+                weather.textContent = data['description'];
+                let bgc = document.getElementById("wrap");
+                
+
+                // 요소의 텍스트 내용 가져오기
+                const textContent = weather.textContent;
+
+                // 일치 여부 확인
+                if (textContent.includes('Sunny')) {
+                    
+                    weather.textContent = "쨍쨍";
+                    bgc.style.backgroundImage = "linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%)";
+                
+                    
+                } 
+                else if (textContent.includes('Partly cloudy')) {
+                    
+                    weather.textContent = "구름조금";
+                    bgc.style.backgroundImage = "linear-gradient(to top, #fff1eb 0%, #ace0f9 100%)";
+                }
+             
+                else if (textContent.includes('Clear')) {
+                    
+                    weather.textContent = "맑음";
+                   bgc.style.backgroundImage = "linear-gradient(to top, #4481eb 0%, #04befe 100%)";
+                }            
+            })
 
 
 
